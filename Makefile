@@ -2,8 +2,8 @@
 SCRIPT = Scripts/update_version.rb
 PODSPEC_FILEPATH = LibPub.podspec
 POD_NAME = LibPub
-PODSPEC_REPOSITORY_NAME = "pods-repository-native"
-SOURCE_URL = "https://gitlab.globoi.com/native/pods-repository"
+PODSPEC_REPOSITORY_NAME = "pods-repository"
+SOURCE_URL = "https://github.com/globoi/pods-repository"
 
 CURRENT_VERSION = $(shell cat .package-version)
 

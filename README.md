@@ -127,5 +127,5 @@ make cocoapods_deploy
 
 Check if the package was generated:
 ```sh
-https://github.com/globoi/pods-repository/-/tree/master/LibPub
+https://github.com/globoi/pods-repository/tree/master/LibPub/
 ```

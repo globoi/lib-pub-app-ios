@@ -10,7 +10,8 @@ end
 
 # Downloading LibPub from the official repository with version
 # source("https://github.com/CocoaPods/Specs.git")
-# source("https://gitlab.globoi.com/native/pods-repository")
+## source("https://gitlab.globoi.com/native/pods-repository")
+# source("https://github.com/globoi/pods-repository")
 
 # platform :ios, '14.0'
 # use_modular_headers!

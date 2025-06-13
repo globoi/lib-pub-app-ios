@@ -45,7 +45,7 @@ Latest stable version: `0.0.1`
 ### CocoaPods
 To integrate `LibPub` into your project, add the following to your `Podfile`:
 ```swift
-source("https://gitlab.globoi.com/native/pods-repository")
+source("https://github.com/globoi/pods-repository")
 ...
 pod 'LibPub', '0.0.1'
 ```
@@ -117,8 +117,8 @@ make add_version_remote
 > branch-name
 
 make setup_cocoapods_deploy
-> your gitlab user
-> your gitlab token
+> your github user
+> your github token
 
 make validate_podspec # optional
 
@@ -127,5 +127,5 @@ make cocoapods_deploy
 
 Check if the package was generated:
 ```sh
-https://gitlab.globoi.com/native/pods-repository/-/tree/master/LibPub
+https://github.com/globoi/pods-repository/tree/master/LibPub/
 ```

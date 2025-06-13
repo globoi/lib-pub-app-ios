@@ -1,0 +1,33 @@
+PODS:
+  - Google-Mobile-Ads-SDK (11.13.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleUserMessagingPlatform (2.7.0)
+  - LibPub (0.0.1):
+    - Google-Mobile-Ads-SDK (= 11.13.0)
+    - PrebidMobile (= 2.4.0)
+  - PrebidMobile (2.4.0):
+    - PrebidMobile/core (= 2.4.0)
+  - PrebidMobile/core (2.4.0)
+
+DEPENDENCIES:
+  - LibPub (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Google-Mobile-Ads-SDK
+    - GoogleUserMessagingPlatform
+    - PrebidMobile
+
+EXTERNAL SOURCES:
+  LibPub:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: 14f57f2dc33532a24db288897e26494640810407
+  GoogleUserMessagingPlatform: a8b56893477f67212fbc8411c139e61d463349f5
+  LibPub: 98765f93313f6231a0cecb3a2bd2490b1f5a71fc
+  PrebidMobile: cad263381f04c99e7be8311155cf32a707afe442
+
+PODFILE CHECKSUM: 50decd37a05c36700cb8d2b83d65bbca7d878e90
+
+COCOAPODS: 1.16.2

@@ -3,13 +3,13 @@ Pod::Spec.new do |s|
     s.version = '0.0.1'
     s.summary = 'Framework for ad delivery.'
     s.description = 'Ad delivery via Prebid or GAM.'
-    s.homepage = 'https://gitlab.globoi.com/adtech/delivery-e-performance-digital/gama-core/ads-lib/lib-pub-app-ios'
+    s.homepage = 'https://github.com/globoi/lib-pub-app-ios'
     s.license = {
       :type => 'MIT',
       :file => 'LICENSE'
     }
     s.source = {
-      :git => 'https://gitlab.globoi.com/adtech/delivery-e-performance-digital/gama-core/ads-lib/lib-pub-app-ios.git',
+      :git => 'https://github.com/globoi/lib-pub-app-ios.git',
       :tag => s.version.to_s
     }
     s.author = {

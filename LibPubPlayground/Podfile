@@ -1,0 +1,20 @@
+# Downloading LibPub locally for development
+platform :ios, '14.0'
+use_modular_headers!
+
+target 'LibPubPlayground' do
+    pod 'LibPub', :path => '../'
+end
+
+# OR
+
+# Downloading LibPub from the official repository with version
+# source("https://github.com/CocoaPods/Specs.git")
+# source("https://gitlab.globoi.com/native/pods-repository")
+
+# platform :ios, '14.0'
+# use_modular_headers!
+
+# target 'LibPubPlayground' do
+#     pod 'LibPub', '0.0.1'
+# end

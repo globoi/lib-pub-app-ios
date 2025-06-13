@@ -1,0 +1,21 @@
+platform :ios, '14.0'
+use_frameworks!
+
+def common_pods
+  pod 'Google-Mobile-Ads-SDK', '11.13.0'
+  pod 'PrebidMobile', '2.4.0'
+end
+
+target 'LibPub' do
+  common_pods
+end
+
+target 'LibPubTests' do
+  inherit! :search_paths
+  common_pods
+end
+
+target 'LibPubIntegrationTests' do
+  inherit! :search_paths
+  common_pods
+end

@@ -2,6 +2,7 @@ import GoogleMobileAds
 import PrebidMobile
 
 public struct NativeAdRequestParams {
+    let adType: AdType
     let adUnit: String
     let templateId: String
     let gamRequest: GAMRequest

@@ -55,12 +55,7 @@ public class LibPubApp {
             customTargeting: nativeAdRequestOptions.customTargeting
         )
 
-        let nativeAdResponse = try await nativeAdRequest.requestAd()
-
-        let adResponseGeneric: NativeAdResponseGeneric<T> = try AdFormatRepository.getAdFormatByType(
-            adType: nativeAdRequestOptions.adType,
-            nativeAdResponse: nativeAdResponse
-        )
+        let adResponseGeneric: NativeAdResponseGeneric<T> = try await nativeAdRequest.requestAd()
 
         return adResponseGeneric
     }

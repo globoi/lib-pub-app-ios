@@ -10,6 +10,7 @@ class NativeAdRequestParamsTests: XCTestCase {
     struct MockAdUnit: AdUnitProtocol {}
 
     func testNativeAdRequestParamsInitialization() {
+        let adType = AdType.PAUSE_AD
         let adUnit = "test_ad_unit"
         let templateId = "test_template_id"
         let customTargeting = ["key1": "value1", "key2": "value2"]
@@ -19,6 +20,7 @@ class NativeAdRequestParamsTests: XCTestCase {
         let prebidTemplateId = "prebid_template_id"
 
         let params = NativeAdRequestParams(
+            adType: adType,
             adUnit: adUnit,
             templateId: templateId,
             gamRequest: gamRequest,
@@ -31,16 +33,18 @@ class NativeAdRequestParamsTests: XCTestCase {
         XCTAssertEqual(params.templateId, templateId)
         XCTAssertNotNil(params.gamRequest)
         XCTAssertEqual(params.prebidOptions?.adUnit, prebidOptions.adUnit)
-        XCTAssertNil(params.prebidNativeAdUnit)  // Ajuste necessário para refletir a nova lógica
+        XCTAssertNil(params.prebidNativeAdUnit)
         XCTAssertEqual(params.prebidTemplateId, prebidTemplateId)
     }
 
     func testNativeAdRequestParamsWithMinimalParameters() {
+        let adType = AdType.PAUSE_AD
         let adUnit = "minimal_ad_unit"
         let templateId = "minimal_template_id"
         let gamRequest = AdRequestFactory.createAdRequest()
 
         let params = NativeAdRequestParams(
+            adType: adType,
             adUnit: adUnit,
             templateId: templateId,
             gamRequest: gamRequest,
@@ -58,12 +62,14 @@ class NativeAdRequestParamsTests: XCTestCase {
     }
 
     func testNativeAdRequestParamsWithPartialOptionalParameters() {
+        let adType = AdType.BINGE_AD
         let adUnit = "partial_ad_unit"
         let templateId = "partial_template_id"
         let customTargeting = ["key": "value"]
         let gamRequest = AdRequestFactory.createAdRequest(customTargeting: customTargeting)
 
         let params = NativeAdRequestParams(
+            adType: adType,
             adUnit: adUnit,
             templateId: templateId,
             gamRequest: gamRequest,

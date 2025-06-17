@@ -36,6 +36,7 @@ public struct NativeAdRequestFactory {
         }
 
         let params = NativeAdRequestParams(
+            adType: adType,
             adUnit: adUnit,
             templateId: templateId,
             gamRequest: gamRequest,

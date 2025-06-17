@@ -10,7 +10,7 @@ class NativeAdRequest {
         self.params = params
     }
 
-    public func requestAd() async throws -> NativeAdResponse {
+    public func requestAd<T>() async throws -> NativeAdResponseGeneric<T> {
         return try await withCheckedThrowingContinuation { continuation in
             if let prebidRequest = params.prebidNativeAdUnit {
                 prebidRequest.fetchDemand(adObject: params.gamRequest) { result in
@@ -28,13 +28,21 @@ class NativeAdRequest {
         }
     }
 
-    private func callGamAdLoader(continuation: CheckedContinuation<NativeAdResponse, Error>) {
-        let gamNativeAdLoader = GamNativeAdLoader(params: params) { result in
+    private func callGamAdLoader<T>(continuation: CheckedContinuation<NativeAdResponseGeneric<T>, Error>) {
+        let gamNativeAdLoader = GamNativeAdLoader(params: self.params) { result in
             self.gamNativeAdLoader = nil
 
             switch result {
             case .success(let nativeAdResponse):
-                continuation.resume(returning: nativeAdResponse)
+                do {
+                    let adResponseGeneric: NativeAdResponseGeneric<T> = try AdFormatRepository.getAdFormatByType(
+                        adType: self.params.adType,
+                        nativeAdResponse: nativeAdResponse
+                    )
+                    continuation.resume(returning: adResponseGeneric)
+                } catch {
+                    continuation.resume(throwing: error)
+                }
             case .failure(let error):
                 continuation.resume(throwing: error)
             }
